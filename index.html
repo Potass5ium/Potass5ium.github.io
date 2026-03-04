@@ -1,46 +1,81 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        /* basic layout styling */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Hello, I'm Sang Yeop Lee</h1>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    /* font and smooth scroll */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap');
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #000;
+        /* black background */
+        color: #fff;
+        /* white text */
+    }
+
+    code,
+    .mono {
+        font-family: 'JetBrains Mono', monospace;
+    }
+</style>
+
+<body class="max-w-4xl mx-auto px-6 py-12 antialiased">
+
+    <header class="mb-16 border-b border-gray-700 pb-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">
+            Hello, I'm Sang Yeop Lee
+        </h1>
+        <p class="mt-4 text-gray-400 text-lg">Developer / Chuncheon, South Korea</p>
     </header>
-    
-    <section>
-        <h2>Introduce</h2>
-        <p>Now I'm working on Soulphos Corp.(`26.3 ~ )</p>
-        <p>I'v studied at Kangwon National University(Chuncheon) (`20.3 ~ `26.2)</p>
-        <p>I'v surved for army. (`21.4 ~ `22.10)</p>
+
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="w-1 h-7 bg-white mr-3 rounded-full"></span>
+            About me
+        </h2>
+        <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700">
+            <div class="space-y-6 text-gray-300">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Experience</h3>
+                    <p class="text-lg">Developer at <span class="text-white font-medium">Soulphos Corp.</span>
+                    </p>
+                    <p class="text-sm text-gray-400">Mar 2026 ~ Present</p>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Education</h3>
+                    <p class="text-lg">B.S. in <span class="text-white font-medium">Computer Engineering</span></p>
+                    <p class="text-sm text-gray-400">Kangwon National University, Mar 2020 ~ Feb 2026</p>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Military Service</h3>
+                    <p class="text-lg">Completed in Army<span class="text-sm text-gray-400">, Apr 2021 ~ Oct
+                            2022</span></p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>On going Projects</h2>
-        <ul>
-            <li>RS</li>
-        </ul>
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="w-1 h-7 bg-white mr-3 rounded-full"></span>
+            Ongoing Projects
+        </h2>
+        <div class="grid gap-6">
+            <div class="group p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
+                <h3 class="text-xl font-bold text-white mb-2">RS</h3>
+                <p class="text-gray-400 mb-4">Private Project, Souphos Corp.</p>
+                <div class="flex gap-2 text-xs mono">
+                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">Unity</span>
+                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">ROS 2</span>
+                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">C#</span>
+                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">Python</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
+    <footer class="text-center text-gray-500 text-sm mt-24">
         <p>© 2026 Sang-yeop. All rights reserved.</p>
     </footer>
 </body>
-</html>
