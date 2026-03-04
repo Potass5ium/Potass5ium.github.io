@@ -24,7 +24,7 @@
         <h1 class="text-4xl md:text-5xl font-bold text-white">
             Hello, I'm Sang Yeop Lee
         </h1>
-        <p class="mt-4 text-gray-400 text-lg">Developer / Chuncheon, South Korea</p>
+        <p class="mt-4 text-gray-400 text-lg">Software Engineer / tkdduq1219@google.com</p>
     </header>
 
     <section class="mb-16">
@@ -32,25 +32,124 @@
             <span class="w-1 h-7 bg-white mr-3 rounded-full"></span>
             About me
         </h2>
+        <div class="space-y-3">
+            <!-- 1 subtitle to 1 div; To add div, make same style of "div.card" -->
+            <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-700 text-gray-300">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Experience</h3>
+                <p class="text-lg">Software Engineer at <span class="text-white font-bold">Soulphos Corp.</span></p>
+                <p class="text-sm text-gray-400">Seong-su (Seoul), 2026.3 ~ Present</p>
+            </div>
+
+            <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-700 text-gray-300">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Education</h3>
+                <p class="text-lg">B.S. in <span class="text-white font-bold">Computer Engineering</span></p>
+                <p class="text-sm text-gray-400">Kangwon National University (Chuncheon), 2020.3 ~ 2026.2</p>
+            </div>
+
+            <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-700 text-gray-300">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Military Service</h3>
+                <p class="text-lg"><span class="text-white font-bold">Completed</span> in Army</p>
+                <p class="text-sm text-gray-400">2021.4 ~ 2022.10</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="w-1 h-7 bg-white mr-3 rounded-full"></span>
+            Awards
+        </h2>
         <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-700">
-            <div class="space-y-6 text-gray-300">
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Experience</h3>
-                    <p class="text-lg">Developer at <span class="text-white font-medium">Soulphos Corp.</span>
-                    </p>
-                    <p class="text-sm text-gray-400">Mar 2026 ~ Present</p>
-                </div>
+            <h3 class="text-lg font-bold text-white group relative mb-2">
+                인기상
+                <span
+                    class="absolute bottom-full left-0 mb-1 px-2 py-1 text-xs text-black bg-white rounded opacity-0 group-hover:opacity-100 transition">
+                    Popularity Award
+                </span>
+            </h3>
+            <p class="text-gray-400 group relative mb-1">
+                2025 SW중심대학 우수작품경진대회
+                <span
+                    class="absolute bottom-full left-0 mb-1 px-2 py-1 text-xs text-black bg-white rounded opacity-0 group-hover:opacity-100 transition">
+                    2025 SW Center University Excellence Project Competition
+                </span>
+            </p>
+            <p class="text-gray-400"> <a class="text-blue-400 underline hover:text-blue-300"
+                    href="https://github.com/knupp7/backend-ai-interview" target="_blank"
+                    rel="noopener noreferrer">Duri-Intern</a>, AI interview simulator </p>
+            <p class="text-xs text-gray-500 mt-2">
+                <span class="relative underline cursor-pointer hover:text-gray-300 transition"
+                    onclick="showCertificate()" onmouseover="showThumbnail()" onmouseout="closeThumbnail()">
+                    View Certificate
+                    <span id="thumbnailPopup"
+                        class="hidden absolute top-full left-0 mt-1 w-56 bg-gray-900 p-1 rounded shadow-xl border border-gray-600 z-40">
+                        <img src="certificate.jpg" alt="Certificate Thumbnail" class="w-full h-auto rounded">
+                    </span>
+                </span>
+            </p>
+        </div>
+    </section>
 
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Education</h3>
-                    <p class="text-lg">B.S. in <span class="text-white font-medium">Computer Engineering</span></p>
-                    <p class="text-sm text-gray-400">Kangwon National University, Mar 2020 ~ Feb 2026</p>
-                </div>
+    <!-- image modal; on click -->
+    <div id="certModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+        onclick="closeCertificate()">
+        <div class="max-w-xl w-full bg-gray-900 p-2 rounded-lg relative" onclick="event.stopPropagation()">
+            <button onclick="closeCertificate()"
+                class="absolute -top-10 right-0 text-white text-3xl font-bold">&times;</button>
+            <img id="certImage" src="certificate.jpg" alt="Award Certificate" class="w-full h-auto rounded shadow-2xl">
+        </div>
+    </div>
 
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Military Service</h3>
-                    <p class="text-lg">Completed in Army<span class="text-sm text-gray-400">, Apr 2021 ~ Oct
-                            2022</span></p>
+    <script>
+        // Thumbnail pop-up; hovering
+        function showThumbnail() {
+            document.getElementById('thumbnailPopup').classList.remove('hidden');
+        }
+
+        function closeThumbnail() {
+            document.getElementById('thumbnailPopup').classList.add('hidden');
+        }
+
+        // image modal; on click
+        function showCertificate() {
+            document.getElementById('certModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // scroll lock
+        }
+
+        function closeCertificate() {
+            document.getElementById('certModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // scroll restore
+        }
+    </script>
+
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <span class="w-1 h-7 bg-white mr-3 rounded-full"></span>
+            Skill Stacks
+        </h2>
+        <!-- 1 line, 1 div; to add, new ".card" at ".skill-list"  -->
+        <div class="skill-list space-y-3">
+            <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Languages</h3>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">C#</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">Python</span>
+                </div>
+            </div>
+
+            <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Tools & DevOps</h3>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">Git</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">Ubuntu</span>
+                </div>
+            </div>
+
+            <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Robotics & Simulation</h3>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">Unity</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">ROS 2</span>
                 </div>
             </div>
         </div>
@@ -61,16 +160,17 @@
             <span class="w-1 h-7 bg-white mr-3 rounded-full"></span>
             Projects
         </h2>
-        <div class="grid gap-6">
+        <div class="grid gap-3">
             <div class="group p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
                 <h3 class="text-xl font-bold text-white mb-2">RS</h3>
-                <p class="text-sm text-gray-400 mb-4">2025.12&nbsp;~&nbsp;Present</p>
-                <p class="text-gray-400 mb-1">Private Project, Souphos Corp.</p>
+                <p class="text-sm text-gray-400 mb-4">Dec 2025&nbsp;~&nbsp;Present</p>
+                <p class="text-gray-400 mb-1">Private Project, Soulphos Corp.</p>
                 <div class="flex gap-2 text-xs mono">
-                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">Unity</span>
-                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">ROS 2</span>
-                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">C#</span>
-                    <span class="px-2 py-1 bg-gray-900 rounded border border-gray-600">Python</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">Unity</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">ROS 2</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">C#</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">Python</span>
+                    <span class="px-3 py-1 bg-gray-800 rounded border border-gray-600 text-gray-200">Ubuntu</span>
                 </div>
             </div>
         </div>
